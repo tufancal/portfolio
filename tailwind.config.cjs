@@ -4,14 +4,26 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				primaryDark: '#061012',
-				secondaryDark: '#ECEFF2',
-				tertiaryDark: '#252225',
-				highlightDark: '#84A4FC',
-				primaryLight: '#ECEFF2',
-				secondaryLight: '#061012',
-				tertiaryLight: '#DADCE7',
-				highlightLight: '#2E4756'
+				primary: {
+					dark: '#061012',
+					light: '#ECEFF2'
+				},
+				secondary: {
+					dark: '#ECEFF2',
+					light: '#061012'
+				},
+				tertiary: {
+					dark: '#252225',
+					light: '#DADCE7'
+				},
+				highlight: {
+					dark: '#84A4FC',
+					light: '#2E4756'
+				}
+			},
+			fontFamily: {
+				Roboto: ['Roboto', 'Times New Roman'],
+				RobotoCondensed: ['RobotoCondensed', 'Times New Roman']
 			}
 		},
 	},
