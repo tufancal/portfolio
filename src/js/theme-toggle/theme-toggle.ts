@@ -26,8 +26,6 @@ export default class ThemeToggle {
 	}
 
 	_checkDefaultTheme() {
-		console.log(localStorage.getItem('theme'));
-
 		if (
 			window.matchMedia &&
 			window.matchMedia('(prefers-color-scheme: dark)').matches &&
