@@ -1,25 +1,12 @@
 <div
 	class="js-theme-toggle ml-4 p-1 hover:cursor-pointer text-secondary-light bg-tertiary-light rounded-full"
 >
-	<img src="./moon-filled-loop.svg" alt="Mond" data-icon="moon" width="24" height="24" />
+	<img src="./moon-filled-loop.svg" alt="Mond" data-dark width="24" height="24" />
 	<img
 		src="./sun-rising-loop.svg"
 		alt="Sonne"
-		data-icon="sun"
+		data-light
     class="hidden"
 		width="24" height="24"
 	/>
 </div>
-
-<script>
-	const toggle = document.querySelector('.js-theme-toggle');
-  const icons = document.querySelectorAll('[data-icon]');
-
-  icons?.forEach(icon => {
-    console.log(icon);
-  })
-
-	toggle?.addEventListener('click', () => {
-		console.log('Hello World');
-	});
-</script>
