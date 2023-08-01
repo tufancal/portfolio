@@ -14,12 +14,12 @@ module.exports = {
 					light: '#061012'
 				},
 				tertiary: {
-					dark: '#252225',
+					dark: '#000000',
 					light: '#DADCE7'
 				},
 				highlight: {
 					dark: '#84A4FC',
-					light: '#2E4756'
+					light: '#274690'
 				}
 			},
 			fontFamily: {
