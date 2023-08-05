@@ -1,8 +1,35 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.astro';
+import { Icon } from 'astro-icon';
+
+const skills = ['html5', 'css3', 'javascript', 'git', 'typescript', 'react', 'astro', 'shopify', 'craftcms', 'json', 'asana']
 ---
 
 <Layout title="Welcome to Astro.">
-  <h1 class="text-2xl mb-3">Willkommen! 🥊</h1>
-  <p class="m-0 leading-7">Ich bin Tufan Calisir, ein angehender Ingenieur im Fahrzeugbau mit Leidenschaft für die Frontend-Entwicklung. Die Kombination mag ungewöhnlich erscheinen, aber sie macht meine Reise einzigartig. Mit Ehrgeiz und Selbststudium habe ich umfassende Kenntnisse in HTML, CSS und JavaScript erworben. Neben der Technik begeistert mich Muay Thai, Schach und das entdecken neuer Kulturen. Willkommen, um mehr über meine Projekte und Erfahrungen als Quereinsteiger zu erfahren!</p>
+	<section class="mb-4 border-b border-tertiary-light pb-4">
+		<h1 class="mb-3 font-RobotoCondensed text-2xl font-medium uppercase">Willkommen! 🥊</h1>
+		<p class="mb-3 leading-7">
+			Ich bin Tufan Calisir, ein angehender Fahrzeugbau-Ingenieur mit
+			Leidenschaft für Frontend-Entwicklung. Durch Ehrgeiz und Selbststudium
+			habe ich umfassende Kenntnisse in HTML, CSS und JavaScript erworben. Neben
+			der Technik begeistern mich Muay Thai, Schach und das Entdecken neuer
+			Kulturen. Erfahren Sie mehr über meine Projekte und Erfahrungen als
+			Quereinsteiger!
+		</p>
+		<div class="flex gap-x-4">
+			<Button href="/blog" target={false}>Zum Blog</Button>
+			<Button href="/contact" target={false}>Kontakt</Button>
+		</div>
+	</section>
+  <section class="mb-4 border-b border-tertiary-light pb-4">
+    <h2 class="mb-3 font-RobotoCondensed text-xl font-medium uppercase">Technologien</h2>
+    <ul class="list-none grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-4">
+      {skills?.map(skill => {
+        return (
+          <li class="inline-flex flex-col justify-center items-center gap-1 sm:flex-row sm:justify-start sm:gap-2"><Icon name={`simple-icons:${skill}`} class="w-6" />{skill.toUpperCase()}</li>
+        )
+      })}
+    </ul>
+  </section>
 </Layout>

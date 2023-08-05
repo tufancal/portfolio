@@ -21,12 +21,10 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body class="font-Roboto bg-primary-light text-primary-dark dark:bg-primary-dark dark:text-primary-light">
-		<main class="px-4 container mx-auto box-border">
+		<main class="mx-auto px-4 max-w-3xl">
 			<Header />
 			<MobileNavigation />
-			<article>
-				<slot />
-			</article>
+			<slot />
 			<footer></footer>
 		</main>
 		<script defer type="module" src="../../src/js/index.ts"></script>
