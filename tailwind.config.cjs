@@ -23,10 +23,12 @@ module.exports = {
 				}
 			},
 			fontFamily: {
-				Roboto: ['Roboto', 'Times New Roman'],
-				RobotoCondensed: ['RobotoCondensed', 'Times New Roman']
+				Roboto: ['Roboto', 'Arial'],
+				RobotoCondensed: ['RobotoCondensed', 'Arial']
 			}
 		},
 	},
-	plugins: [],
+	plugins: [
+			require('@tailwindcss/typography'),
+		],
 }

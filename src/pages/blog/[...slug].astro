@@ -1,20 +1,32 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { getCollection } from 'astro:content';
+import { CollectionEntry, getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
   const blogPosts = await getCollection('blog');
-  return blogPosts.map(({ slug, data }) => {
+  return blogPosts.map((blogPost ) => {
     return {
-      params: { slug },
-      props: { data },
+      params: { slug: blogPost.slug },
+      props: blogPost,
     };
   });
 }
+type Props = CollectionEntry<'blog'>;
 
-const { data } = Astro.props;
+const blogPost  = Astro.props;
+const { Content, headings } = await blogPost.render();
 ---
 
 <Layout title="Welcome to Astro.">
-	<h1>{data.title}</h1>
+	<h1>{blogPost.data.title}</h1>
+  <!-- get headings for table of contents component <ul>
+    {headings.map(heading => {
+      return (
+        <li>{heading.slug}</li>
+      )
+    })}
+  </ul> -->
+  <article class="prose prose-h2:font-RobotoCondensed prose-h3:font-RobotoCondensed dark:prose-invert">
+    <Content />
+  </article>
 </Layout>
