@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import TagList from '../../components/TagList.astro';
 import BlogTeaserCard from '../../components/BlogTeaserCard.astro';
 import { getCollection } from 'astro:content';
 
@@ -26,12 +27,15 @@ const { posts } = Astro.props;
 ---
 
 <Layout title="Blogeinträge">
-	<h1>Blogeinträge mit {tag}</h1>
+	<h1 class="font-RobotoCondensed font-bold text-2xl uppercase mb-6">
+		Blogartikel mit dem Tag: {tag}
+	</h1>
+	<TagList />
 	<ul>
 		{
 			posts.map((post: any) => {
 				return (
-					<li class="mb-4 border-b border-tertiary-light pb-4 last:border-none last:mb-0 last:pb-0">
+					<li class="mb-4 border-b border-tertiary-lightpb-4 last:border-none last:mb-0 last:pb-0">
 						<BlogTeaserCard
 							title={post.data.title}
 							description={post.data.description}

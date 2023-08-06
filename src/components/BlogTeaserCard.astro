@@ -13,7 +13,7 @@ interface Props {
 
 const { title, description, date, slug, readtime } = Astro.props
 ---
-<article class="">
+<article>
   <h2 class="font-RobotoCondensed font-bold text-xl text-highlight-light dark:text-highlight-dark">{title}</h2>
   <div class="flex justify-between items-center mb-2 text-sm">
     <FormattedDate date={date} />

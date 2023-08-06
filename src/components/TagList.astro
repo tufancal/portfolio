@@ -1,0 +1,22 @@
+---
+import BadgeLink from './BadgeLink.astro';
+import { getCollection } from 'astro:content';
+
+const blogPosts = await getCollection('blog');
+const uniqueTags = [...new Set(blogPosts.map((post) => post.data.tags).flat())];
+---
+
+<section class="flex gap-x-3">
+	<h2 class="font-RobotoCondensed font-bold text-lg uppercase">Tags:</h2>
+	<ul class="flex flex-wrap mb-4">
+		{
+			uniqueTags.map((tag) => {
+				return (
+					<li>
+						<BadgeLink href={`/blog/${tag}`} label={tag} />
+					</li>
+				);
+			})
+		}
+	</ul>
+</section>
