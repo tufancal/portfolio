@@ -1,5 +1,6 @@
 ---
 import BlogTeaserCard from '../../components/BlogTeaserCard.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 import TagList from '../../components/TagList.astro';
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
@@ -8,19 +9,28 @@ const blogPosts = await getCollection('blog');
 const sortedPosts = blogPosts.sort(
 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
-
-const uniqueTags = [...new Set(sortedPosts.map((post) => post.data.tags).flat())];
 ---
 
 <Layout title="Welcome to Astro.">
-	<h1 class="font-RobotoCondensed font-bold text-2xl uppercase mb-6">Blogartikel</h1>
+	<Breadcrumb />
+	<h1 class="font-RobotoCondensed font-bold text-2xl uppercase mb-6">
+		Blogartikel
+	</h1>
 	<TagList />
 	<ul>
 		{
 			sortedPosts.map((post) => {
 				return (
-					<li class="mb-4 border-b border-secondary-light pb-4 sm:mb-8 sm:pb-8 last:border-none last:mb-0 last:pb-0"><BlogTeaserCard title={post.data.title} description={post.data.description} date={post.data.pubDate} slug={post.slug} readtime={post.data.readtime} /></li>
-				)
+					<li class="mb-4 border-b border-secondary-light pb-4 sm:mb-8 sm:pb-8 last:border-none last:mb-0 last:pb-0">
+						<BlogTeaserCard
+							title={post.data.title}
+							description={post.data.description}
+							date={post.data.pubDate}
+							slug={post.slug}
+							readtime={post.data.readtime}
+						/>
+					</li>
+				);
 			})
 		}
 	</ul>

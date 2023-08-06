@@ -1,0 +1,53 @@
+---
+import { Icon } from 'astro-icon';
+
+const pathName = Astro.url.pathname;
+const filteredPath = pathName.split('/').filter((path) => path);
+let lastPath: any = null;
+---
+
+<nav class="flex mb-3" aria-label="Breadcrumb">
+	<ol class="inline-flex items-center space-x-1 md:space-x-3">
+		<li class="inline-flex items-center">
+			<a
+				href="#"
+				class="inline-flex items-center text-sm font-medium uppercase  text-primary-dark hover:text-highlight-light dark:text-primary-light dark:hover:text-highlight-dark"
+			>
+				<Icon class="min-w-[16px] w-4 mr-2.5" name="simple-icons:homeadvisor" />
+				 Home
+			</a>
+		</li>
+		{
+			filteredPath.map((path, i) => {
+				const breadcrumb = lastPath ? `${lastPath}/${path}` : path;
+
+				if (filteredPath.length - 1 !== i) {
+					return (
+						<li>
+							<div class="flex items-center">
+								<Icon class="min-w-[16px] w-4 mr-2.5" name="ic:sharp-chevron-right" />
+								<a
+									class="ml-1 text-sm font-medium uppercase text-primary-dark hover:text-highlight-light md:ml-2 dark:text-primary-light dark:hover:text-highlight-dark "
+									href={`/${breadcrumb}`}
+								>
+									{path}
+								</a>
+							</div>
+						</li>
+					);
+				}
+
+				return (
+					<li>
+						<div class="flex items-center">
+							<Icon class="min-w-[16px] w-4 mr-2.5" name="ic:sharp-chevron-right" />
+							<span class="ml-1 text-sm font-medium uppercase line-clamp-1 text-highlight-light dark:text-highlight-dark">
+								{path}
+							</span>
+						</div>
+					</li>
+				);
+			})
+		}
+	</ol>
+</nav>

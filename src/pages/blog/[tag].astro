@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import TagList from '../../components/TagList.astro';
 import BlogTeaserCard from '../../components/BlogTeaserCard.astro';
 import { getCollection } from 'astro:content';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 
 export async function getStaticPaths() {
 	const allPosts = await getCollection('blog');
@@ -27,6 +28,7 @@ const { posts } = Astro.props;
 ---
 
 <Layout title={`Blogartikel mit dem Tag: ${tag}`}>
+	<Breadcrumb />
 	<h1 class="font-RobotoCondensed font-bold text-2xl uppercase mb-6">
 		Blogartikel mit dem Tag: {tag}
 	</h1>
