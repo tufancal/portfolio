@@ -10,10 +10,6 @@ module.exports = {
 					light: '#ECEFF2'
 				},
 				secondary: {
-					dark: '#ECEFF2',
-					light: '#061012'
-				},
-				tertiary: {
 					dark: '#000000',
 					light: '#DADCE7'
 				},

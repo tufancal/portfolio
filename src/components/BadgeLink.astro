@@ -8,12 +8,10 @@ const { href, label } = Astro.props;
 
 const pathName = Astro.url.pathname.split('/');
 const urlCondition = pathName[2];
-
-const incPathName = href;
 const url = href.split('/');
 ---
 
 <a
-	class=`bg-tertiary-light text-xs font-RobotoCondensed mr-2 px-2.5 py-0.5 rounded-full dark:bg-tertiary-dark ${url[2] === urlCondition ? 'text-highlight-light dark:text-highlight-dark' : 'text-primary-dark dark:text-primary-light'}`
+	class=`bg-secondary-light text-xs font-RobotoCondensed mr-2 px-2.5 py-0.5 rounded-full dark:bg-secondary-dark ${url[2] === urlCondition ? 'text-highlight-light dark:text-highlight-dark' : 'text-primary-dark dark:text-primary-light'}`
 	href={href}>{label}</a
 >

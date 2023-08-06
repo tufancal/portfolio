@@ -19,7 +19,7 @@ const uniqueTags = [...new Set(sortedPosts.map((post) => post.data.tags).flat())
 		{
 			sortedPosts.map((post) => {
 				return (
-					<li class="mb-4 border-b border-tertiary-light pb-4 sm:mb-8 sm:pb-8 last:border-none last:mb-0 last:pb-0"><BlogTeaserCard title={post.data.title} description={post.data.description} date={post.data.pubDate} slug={post.slug} readtime={post.data.readtime} /></li>
+					<li class="mb-4 border-b border-secondary-light pb-4 sm:mb-8 sm:pb-8 last:border-none last:mb-0 last:pb-0"><BlogTeaserCard title={post.data.title} description={post.data.description} date={post.data.pubDate} slug={post.slug} readtime={post.data.readtime} /></li>
 				)
 			})
 		}
