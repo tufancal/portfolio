@@ -2,7 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import TagList from '../../components/TagList.astro';
 import BlogTeaserCard from '../../components/BlogTeaserCard.astro';
-import { getCollection } from 'astro:content';
+import { getCollection, CollectionEntry } from 'astro:content';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 
 export async function getStaticPaths() {
@@ -18,13 +18,14 @@ export async function getStaticPaths() {
 		);
 		return {
 			params: { tag },
-			props: { posts: filteredPosts },
+			props: filteredPosts,
 		};
 	});
 }
+type blogPost = CollectionEntry<'blog'>;
 
 const { tag } = Astro.params;
-const { posts } = Astro.props;
+const { filteredPosts } = Astro.props;
 ---
 
 <Layout title={`Blogartikel mit dem Tag: ${tag}`}>
@@ -35,7 +36,7 @@ const { posts } = Astro.props;
 	<TagList />
 	<ul>
 		{
-			posts.map((post: any) => {
+			filteredPosts.map((post: blogPost) => {
 				return (
 					<li class="mb-4 border-b border-secondary-light pb-4 last:border-none last:mb-0 last:pb-0">
 						<BlogTeaserCard

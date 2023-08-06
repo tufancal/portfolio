@@ -3,7 +3,7 @@ import { Icon } from 'astro-icon';
 
 const pathName = Astro.url.pathname;
 const filteredPath = pathName.split('/').filter((path) => path);
-let lastPath: any = null;
+let lastPath: string | null = null;
 ---
 
 <nav class="flex mb-3" aria-label="Breadcrumb">
