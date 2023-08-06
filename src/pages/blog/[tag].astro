@@ -1,0 +1,47 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import BlogTeaserCard from '../../components/BlogTeaserCard.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+	const allPosts = await getCollection('blog');
+
+	const uniqueTags = [
+		...new Set(allPosts.map((post) => post.data.tags).flat()),
+	];
+
+	return uniqueTags.map((tag) => {
+		const filteredPosts = allPosts.filter((post) =>
+			post.data.tags.includes(tag)
+		);
+		return {
+			params: { tag },
+			props: { posts: filteredPosts },
+		};
+	});
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+---
+
+<Layout title="Blogeinträge">
+	<h1>Blogeinträge mit {tag}</h1>
+	<ul>
+		{
+			posts.map((post: any) => {
+				return (
+					<li class="mb-4 border-b border-tertiary-light pb-4 last:border-none last:mb-0 last:pb-0">
+						<BlogTeaserCard
+							title={post.data.title}
+							description={post.data.description}
+							date={post.data.pubDate}
+							slug={post.slug}
+							readtime={post.data.readtime}
+						/>
+					</li>
+				);
+			})
+		}
+	</ul>
+</Layout>

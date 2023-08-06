@@ -1,4 +1,5 @@
 ---
+import BlogTeaserCard from '../../components/BlogTeaserCard.astro';
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 
@@ -6,14 +7,23 @@ const blogPosts = await getCollection('blog');
 const sortedPosts = blogPosts.sort(
 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
+
+const uniqueTags = [...new Set(blogPosts.map((post) => post.data.tags).flat())];
 ---
 
 <Layout title="Welcome to Astro.">
-	<h1>Blog</h1>
+	<h1 class="font-RobotoCondensed font-bold text-2xl uppercase mb-4">Blogartikel</h1>
+	<ul>
+		{uniqueTags.map(tag => {
+			return <li><a href={`/blog/${tag}`}>{tag}</a></li>
+		})}
+	</ul>
 	<ul>
 		{
 			sortedPosts.map((post) => {
-				return <a href={`/blog/${post.slug}/`}>{post.data.title}</a>;
+				return (
+					<li class="mb-4 border-b border-tertiary-light pb-4 last:border-none last:mb-0 last:pb-0"><BlogTeaserCard title={post.data.title} description={post.data.description} date={post.data.pubDate} slug={post.slug} readtime={post.data.readtime} /></li>
+				)
 			})
 		}
 	</ul>

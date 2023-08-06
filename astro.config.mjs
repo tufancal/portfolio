@@ -19,7 +19,7 @@ export default defineConfig({
 						folder: 'src/content/blog',
 						create: true,
 						delete: true,
-            slug: "{{slug}}",
+						slug: '{{slug}}',
 						fields: [
 							{
 								name: 'title',
@@ -35,6 +35,16 @@ export default defineConfig({
 								name: 'pubDate',
 								widget: 'datetime',
 								label: 'Post Date',
+							},
+							{
+								name: 'readtime',
+								widget: 'string',
+								label: 'Time to read'
+							},
+							{
+								name: 'tags',
+								widget: 'list',
+								label: 'Tags'
 							},
 							{
 								name: 'tldr',

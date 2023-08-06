@@ -15,6 +15,8 @@ type Props = CollectionEntry<'blog'>;
 
 const blogPost  = Astro.props;
 const { Content, headings } = await blogPost.render();
+
+
 ---
 
 <Layout title="Welcome to Astro.">
@@ -27,6 +29,9 @@ const { Content, headings } = await blogPost.render();
     })}
   </ul> -->
   <article class="prose prose-h2:font-RobotoCondensed prose-h3:font-RobotoCondensed dark:prose-invert">
+    <section>
+      <p>{blogPost.data.description}</p>
+    </section>
     <Content />
   </article>
 </Layout>
