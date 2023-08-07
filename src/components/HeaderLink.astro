@@ -8,6 +8,6 @@ const urlCondition = '/' + pathName[1];
 
 const { href } = Astro.props;
 ---
-<a class=`font-RobotoCondensed font-bold underline uppercase hover:text-highlight-light hover:no-underline focus-visible:no-underline focus-visible:text-highlight-light focus-visible:outline-offset-4 focus-visible:outline-highlight-light focus-visible:outline dark:hover:text-highlight-dark dark:focus-visible:text-highlight-dark  dark:focus-visible:outline-highlight-dark transition-colors ease delay-100 sm:text-lg lg:text-xl xl:text-3xl ${href === urlCondition ? 'no-underline' : ''}` href={href}>
+<a class=`font-RobotoCondensed font-bold underline uppercase hover:text-highlight-light hover:no-underline focus-visible:no-underline focus-visible:text-highlight-light focus-visible:outline-offset-4 focus-visible:outline-highlight-light focus-visible:outline dark:hover:text-highlight-dark dark:focus-visible:text-highlight-dark  dark:focus-visible:outline-highlight-dark transition-colors ease delay-100 sm:text-lg lg:text-xl xl:text-2xl ${href === urlCondition ? 'no-underline' : ''}` href={href}>
   <slot />
 </a>

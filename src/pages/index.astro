@@ -2,13 +2,38 @@
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
 import { Icon } from 'astro-icon';
+import { getCollection } from 'astro:content';
+import BlogTeaserCard from '../components/BlogTeaserCard.astro';
+import { late } from 'astro/zod';
 
-const skills = ['html5', 'css3', 'javascript', 'git', 'typescript', 'react', 'astro', 'styled-components', 'tailwindcss', 'shopify', 'craftcms', 'json', 'asana']
+const skills = [
+	'html5',
+	'css3',
+	'javascript',
+	'git',
+	'typescript',
+	'react',
+	'astro',
+	'styled-components',
+	'tailwindcss',
+	'shopify',
+	'craftcms',
+	'json',
+	'asana',
+];
+const blogPosts = await getCollection('blog');
+const sortedPosts = blogPosts.sort(
+	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+).reverse();
+
+const lastestPost = sortedPosts[0];
 ---
 
 <Layout title="Welcome to Astro.">
 	<section class="mb-4 border-b border-secondary-light pb-4">
-		<h1 class="mb-3 font-RobotoCondensed text-2xl font-medium uppercase">Willkommen! 🥊</h1>
+		<h1 class="mb-3 font-RobotoCondensed text-2xl font-medium uppercase">
+			Willkommen! 🥊
+		</h1>
 		<p class="mb-3 leading-7">
 			Ich bin Tufan Calisir, ein angehender Fahrzeugbau-Ingenieur mit
 			Leidenschaft für Frontend-Entwicklung. Durch Ehrgeiz und Selbststudium
@@ -22,14 +47,27 @@ const skills = ['html5', 'css3', 'javascript', 'git', 'typescript', 'react', 'as
 			<Button href="/contact" target={false}>Kontakt</Button>
 		</div>
 	</section>
-  <section class="mb-4 border-b border-secondary-light pb-4">
-    <h2 class="mb-3 font-RobotoCondensed text-xl font-medium uppercase">Technologien</h2>
-    <ul class="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-4">
-      {skills?.map(skill => {
-        return (
-          <li class="inline-flex flex-col justify-center items-center gap-1 text-center sm:flex-row sm:justify-start sm:gap-2"><Icon name={`simple-icons:${skill}`} class="w-6" />{skill.toUpperCase()}</li>
-        )
-      })}
-    </ul>
-  </section>
+	<section class="mb-4 border-b border-secondary-light pb-4">
+		<h2 class="mb-3 font-RobotoCondensed text-xl font-medium uppercase">
+			Technologien
+		</h2>
+		<ul class="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-4">
+			{
+				skills?.map((skill) => {
+					return (
+						<li class="inline-flex flex-col justify-center items-center gap-1 text-center sm:flex-row sm:justify-start sm:gap-2">
+							<Icon name={`simple-icons:${skill}`} class="w-6" />
+							{skill.toUpperCase()}
+						</li>
+					);
+				})
+			}
+		</ul>
+	</section>
+	<section class="mb-4 border-b border-secondary-light pb-4">
+		<h2 class="mb-3 font-RobotoCondensed text-xl font-medium uppercase">
+			Letzter Blogartikel
+		</h2>
+		<BlogTeaserCard title={lastestPost.data.title} description={lastestPost.data.description} date={lastestPost.data.pubDate} slug={lastestPost.slug} readtime={lastestPost.data.readtime} />
+	</section>
 </Layout>
