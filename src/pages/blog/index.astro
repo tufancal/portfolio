@@ -17,11 +17,11 @@ const sortedPosts = blogPosts.sort(
 		Blogartikel
 	</h1>
 	<TagList />
-	<ul>
+	<ul class="divider">
 		{
 			sortedPosts.map((post) => {
 				return (
-					<li class="mb-4 border-b border-secondary-light pb-4 sm:mb-8 sm:pb-8 last:border-none last:mb-0 last:pb-0">
+					<li class="divider">
 						<BlogTeaserCard
 							title={post.data.title}
 							description={post.data.description}

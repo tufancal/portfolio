@@ -1,3 +1,5 @@
+@tailwind components;
+
 @font-face {
   font-family: 'Roboto';
   src: url('../../fonts/Roboto-Regular.ttf') format('truetype');
@@ -36,4 +38,14 @@
   src: url('../../fonts/RobotoCondensed-Bold.woff2') format('woff2');
   font-weight: 700;
   font-display: swap;
+}
+
+@layer components {
+  .divider {
+    @apply mb-4 border-b border-secondary-light pb-4 md:mb-8 md:pb-8 last:border-none last:mb-0 last:pb-0
+  }
+
+  .sociallink {
+    @apply inline-block transition-transform delay-75 hover:-translate-y-1 focus-visible:outline outline-offset-4 outline-highlight-light dark:outline-highlight-dark
+  }
 }

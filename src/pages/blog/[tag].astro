@@ -34,11 +34,11 @@ const { filteredPosts } = Astro.props;
 		Blogartikel mit dem Tag: {tag}
 	</h1>
 	<TagList />
-	<ul>
+	<ul class="divider">
 		{
 			filteredPosts.map((post: blogPost) => {
 				return (
-					<li class="mb-4 border-b border-secondary-light pb-4 last:border-none last:mb-0 last:pb-0">
+					<li class="divider">
 						<BlogTeaserCard
 							title={post.data.title}
 							description={post.data.description}
