@@ -18,7 +18,7 @@ const blogPost = Astro.props;
 const { Content, headings } = await blogPost.render();
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title={`${blogPost.data.title} | Tufan Calisir`}>
   <Breadcrumb />
 	<h1>{blogPost.data.title}</h1>
 	<!-- get headings for table of contents component <ul>
