@@ -1,22 +1,27 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import FormInput from '../components/FormInput.astro';
+import Layout from "../layouts/Layout.astro";
+import FormInput from "../components/FormInput.astro";
 ---
 
 <Layout title="Kontakt | Tufan Calisir">
-	<form class="" name="contact" method="POST" data-netlify="true">
-		<FormInput name="name" type="text" label="Name" />
+  <form class="divider" name="contact" method="POST" data-netlify="true">
+    <FormInput name="name" type="text" label="Name" />
     <FormInput name="email" type="email" label="E-Mail Adresse" />
-		<label
-			for="message"
-			class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-			>Deine Nachricht</label
-		>
-		<textarea
-			id="message"
-			rows="4"
-			class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-			placeholder="Lass mir eine Nachricht da! 🚀"></textarea>
-		<button type="submit">Send</button>
-	</form>
+    <div class="mb-6">
+      <label
+        for="message"
+        class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+        >Deine Nachricht</label
+      >
+      <textarea
+        id="message"
+        rows="4"
+        class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+        placeholder="Lass mir eine Nachricht da! 🚀"></textarea>
+    </div>
+    <button
+      class="inline-flex items-center justify-center bg-highlight-light px-5 py-2 font-RobotoCondensed font-bold uppercase text-primary-light outline-offset-4 transition-colors delay-75 hover:bg-secondary-light hover:text-highlight-light focus-visible:outline focus-visible:outline-highlight-light dark:bg-highlight-dark dark:text-primary-dark dark:hover:bg-secondary-dark dark:hover:text-highlight-dark dark:focus-visible:outline-highlight-dark"
+      type="submit">Absenden</button
+    >
+  </form>
 </Layout>

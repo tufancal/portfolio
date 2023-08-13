@@ -1,18 +1,18 @@
 ---
-import Breadcrumb from '../../components/Breadcrumb.astro';
-import Layout from '../../layouts/Layout.astro';
-import { CollectionEntry, getCollection } from 'astro:content';
+import Breadcrumb from "../../components/Breadcrumb.astro";
+import Layout from "../../layouts/Layout.astro";
+import { CollectionEntry, getCollection } from "astro:content";
 
 export async function getStaticPaths() {
-	const blogPosts = await getCollection('blog');
-	return blogPosts.map((blogPost) => {
-		return {
-			params: { slug: blogPost.slug },
-			props: blogPost,
-		};
-	});
+  const blogPosts = await getCollection("blog");
+  return blogPosts.map((blogPost) => {
+    return {
+      params: { slug: blogPost.slug },
+      props: blogPost,
+    };
+  });
 }
-type Props = CollectionEntry<'blog'>;
+type Props = CollectionEntry<"blog">;
 
 const blogPost = Astro.props;
 const { Content, headings } = await blogPost.render();
@@ -20,20 +20,20 @@ const { Content, headings } = await blogPost.render();
 
 <Layout title={`${blogPost.data.title} | Tufan Calisir`}>
   <Breadcrumb />
-	<h1>{blogPost.data.title}</h1>
-	<!-- get headings for table of contents component <ul>
+  <h1>{blogPost.data.title}</h1>
+  <!-- get headings for table of contents component <ul>
     {headings.map(heading => {
       return (
         <li>{heading.slug}</li>
       )
     })}
   </ul> -->
-	<article
-		class="prose prose-h2:font-RobotoCondensed prose-h3:font-RobotoCondensed dark:prose-invert"
-	>
-		<section>
-			<p>{blogPost.data.description}</p>
-		</section>
-		<Content />
-	</article>
+  <article
+    class="divider prose max-w-full dark:prose-invert prose-h2:font-RobotoCondensed prose-h3:font-RobotoCondensed"
+  >
+    <section>
+      <p>{blogPost.data.description}</p>
+    </section>
+    <Content />
+  </article>
 </Layout>

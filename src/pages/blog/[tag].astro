@@ -1,54 +1,54 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import TagList from '../../components/TagList.astro';
-import BlogTeaserCard from '../../components/BlogTeaserCard.astro';
-import { getCollection, CollectionEntry } from 'astro:content';
-import Breadcrumb from '../../components/Breadcrumb.astro';
+import Layout from "../../layouts/Layout.astro";
+import TagList from "../../components/TagList.astro";
+import BlogTeaserCard from "../../components/BlogTeaserCard.astro";
+import { getCollection, CollectionEntry } from "astro:content";
+import Breadcrumb from "../../components/Breadcrumb.astro";
 
 export async function getStaticPaths() {
-	const allPosts = await getCollection('blog');
+  const allPosts = await getCollection("blog");
 
-	const uniqueTags = [
-		...new Set(allPosts.map((post) => post.data.tags).flat()),
-	];
+  const uniqueTags = [
+    ...new Set(allPosts.map((post) => post.data.tags).flat()),
+  ];
 
-	return uniqueTags.map((tag) => {
-		const filteredPosts = allPosts.filter((post) =>
-			post.data.tags.includes(tag)
-		);
-		return {
-			params: { tag },
-			props: { filteredPosts },
-		};
-	});
+  return uniqueTags.map((tag) => {
+    const filteredPosts = allPosts.filter((post) =>
+      post.data.tags.includes(tag),
+    );
+    return {
+      params: { tag },
+      props: { filteredPosts },
+    };
+  });
 }
-type blogPost = CollectionEntry<'blog'>;
+type blogPost = CollectionEntry<"blog">;
 
 const { tag } = Astro.params;
 const { filteredPosts } = Astro.props;
 ---
 
 <Layout title={`Blogartikel mit dem Tag: ${tag} | Tufan Calisir`}>
-	<Breadcrumb />
-	<h1 class="font-RobotoCondensed font-bold text-2xl uppercase mb-6">
-		Blogartikel mit dem Tag: {tag}
-	</h1>
-	<TagList />
-	<ul class="divider">
-		{
-			filteredPosts.map((post: blogPost) => {
-				return (
-					<li class="divider">
-						<BlogTeaserCard
-							title={post.data.title}
-							description={post.data.description}
-							date={post.data.pubDate}
-							slug={post.slug}
-							readtime={post.data.readtime}
-						/>
-					</li>
-				);
-			})
-		}
-	</ul>
+  <Breadcrumb />
+  <h1 class="mb-6 font-RobotoCondensed text-2xl font-bold uppercase">
+    Blogartikel mit dem Tag: {tag}
+  </h1>
+  <TagList />
+  <ul class="divider">
+    {
+      filteredPosts.map((post: blogPost) => {
+        return (
+          <li class="divider">
+            <BlogTeaserCard
+              title={post.data.title}
+              description={post.data.description}
+              date={post.data.pubDate}
+              slug={post.slug}
+              readtime={post.data.readtime}
+            />
+          </li>
+        );
+      })
+    }
+  </ul>
 </Layout>
