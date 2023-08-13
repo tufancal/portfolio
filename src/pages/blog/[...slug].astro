@@ -21,13 +21,13 @@ const { Content, headings } = await blogPost.render();
 <Layout title={`${blogPost.data.title} | Tufan Calisir`}>
   <Breadcrumb />
   <h1>{blogPost.data.title}</h1>
-  <!-- get headings for table of contents component <ul>
+  <ul>
     {headings.map(heading => {
       return (
         <li>{heading.slug}</li>
       )
     })}
-  </ul> -->
+  </ul>
   <article
     class="divider prose max-w-full dark:prose-invert prose-h2:font-RobotoCondensed prose-h3:font-RobotoCondensed"
   >
