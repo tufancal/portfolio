@@ -1,28 +1,28 @@
 ---
 interface Props {
-	href: string;
-	target?: boolean;
+  href: string;
+  target?: boolean;
 }
 
 const { href, target } = Astro.props;
 ---
 
 {
-	target ? (
-		<a
-			class="inline-flex items-center justify-center focus-visible:outline outline-offset-4 px-5 py-2 font-RobotoCondensed font-bold uppercase bg-highlight-light text-primary-light transition-colors delay-75 hover:bg-secondary-light hover:text-highlight-light focus-visible:outline-highlight-light dark:bg-highlight-dark dark:text-primary-dark dark:hover:bg-secondary-dark dark:hover:text-highlight-dark dark:focus-visible:outline-highlight-dark"
-			href={href}
-			target="_blank"
-			rel="noreferrer"
-		>
-			<slot />
-		</a>
-	) : (
-		<a
-			class="inline-flex items-center justify-center focus-visible:outline outline-offset-4 px-5 py-2 font-RobotoCondensed font-bold uppercase bg-highlight-light text-primary-light transition-colors delay-75 hover:bg-secondary-light hover:text-highlight-light focus-visible:outline-highlight-light dark:bg-highlight-dark dark:text-primary-dark dark:hover:bg-secondary-dark dark:hover:text-highlight-dark dark:focus-visible:outline-highlight-dark"
-			href={href}
-		>
-			<slot />
-		</a>
-	)
+  target ? (
+    <a
+      class="inline-flex items-center justify-center bg-highlight-light px-5 py-2 font-RobotoCondensed font-bold uppercase text-primary-light outline-offset-4 transition-colors delay-75 hover:bg-secondary-light hover:text-highlight-light focus-visible:outline focus-visible:outline-highlight-light dark:bg-highlight-dark dark:text-primary-dark dark:hover:bg-secondary-dark dark:hover:text-highlight-dark dark:focus-visible:outline-highlight-dark"
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+    >
+      <slot />
+    </a>
+  ) : (
+    <a
+      class="inline-flex items-center justify-center bg-highlight-light px-5 py-2 font-RobotoCondensed font-bold uppercase text-primary-light outline-offset-4 transition-colors delay-75 hover:bg-secondary-light hover:text-highlight-light focus-visible:outline focus-visible:outline-highlight-light dark:bg-highlight-dark dark:text-primary-dark dark:hover:bg-secondary-dark dark:hover:text-highlight-dark dark:focus-visible:outline-highlight-dark"
+      href={href}
+    >
+      <slot />
+    </a>
+  )
 }

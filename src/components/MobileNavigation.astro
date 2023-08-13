@@ -1,8 +1,17 @@
 ---
 import MobileNavigationLink from "./MobileNavigationLink.astro";
 ---
-<nav class="fixed flex items-center justify-evenly bottom-0 left-0 z-10 w-full h-max py-4 bg-secondary-dark text-primary-light dark:bg-secondary-light dark:text-primary-dark sm:hidden">
-  <MobileNavigationLink icon="ic:baseline-home" href="/">Home</MobileNavigationLink>
-  <MobileNavigationLink icon="foundation:page-edit" href="/blog">Blog</MobileNavigationLink>
-  <MobileNavigationLink icon="ic:baseline-email" href="/contact">Kontakt</MobileNavigationLink>
+
+<nav
+  class="fixed bottom-0 left-0 z-10 flex h-max w-full items-center justify-evenly bg-secondary-dark py-4 text-primary-light dark:bg-secondary-light dark:text-primary-dark sm:hidden"
+>
+  <MobileNavigationLink icon="ic:baseline-home" href="/">
+    Home
+  </MobileNavigationLink>
+  <MobileNavigationLink icon="foundation:page-edit" href="/blog">
+    Blog
+  </MobileNavigationLink>
+  <MobileNavigationLink icon="ic:baseline-email" href="/contact">
+    Kontakt
+  </MobileNavigationLink>
 </nav>
