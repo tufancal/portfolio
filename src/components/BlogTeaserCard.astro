@@ -27,6 +27,6 @@ const { title, description, date, slug, readtime } = Astro.props;
       {readtime}
     </p>
   </div>
-  <p class="mb-2 line-clamp-3">{description}</p>
+  <p class="mb-2 line-clamp-3 md:mb-4">{description}</p>
   <Button href={`/blog/${slug}/`}>Weiterlesen</Button>
 </article>
