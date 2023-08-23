@@ -11,7 +11,12 @@ import { Icon } from "astro-icon";
   <div
     class="flex w-full items-center justify-between sm:justify-normal sm:gap-6"
   >
-    <Icon name="logo" class="w-[100px] lg:w-[160px]" />
+    <a
+      href="/"
+      class="focus-visible:outline focus-visible:outline-offset-8 focus-visible:outline-highlight-light dark:focus-visible:outline-highlight-dark"
+    >
+      <Icon name="logo" class="w-[100px] lg:w-[160px]" />
+    </a>
     <ThemeToggle />
   </div>
   <nav
