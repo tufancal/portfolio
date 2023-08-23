@@ -1,8 +1,14 @@
 ---
+interface Props {
+  classNames?: string[];
+}
+
+const { classNames } = Astro.props;
+
 import { Icon } from "astro-icon";
 ---
 
-<ul class="flex gap-x-4">
+<ul class={classNames ? classNames.join(' ') : ''}>
   <li>
     <a
       class="sociallink"
