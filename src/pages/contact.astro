@@ -4,7 +4,7 @@ import FormInput from "../components/FormInput.astro";
 ---
 
 <Layout title="Kontakt | Tufan Calisir">
-  <form class="divider" name="contact" method="POST" data-netlify="true">
+  <form class="divider" name="contact" method="POST" netlify>
     <FormInput name="name" type="text" label="Name" required={true} />
     <FormInput name="email" type="email" label="E-Mail Adresse" required={true} />
     <div class="mb-6">
