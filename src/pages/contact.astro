@@ -4,24 +4,26 @@ import FormInput from "../components/FormInput.astro";
 ---
 
 <Layout title="Kontakt | Tufan Calisir">
-  <form class="divider" name="contact" method="POST" netlify>
-    <FormInput name="name" type="text" label="Name" required={true} />
-    <FormInput name="email" type="email" label="E-Mail Adresse" required={true} />
-    <div class="mb-6">
+  <form name="contact" method="POST" data-netlify="true">
+    <p>
+      <label>Your Name: <input type="text" name="name" /></label>
+    </p>
+    <p>
+      <label>Your Email: <input type="email" name="email" /></label>
+    </p>
+    <p>
       <label
-        for="message"
-        class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
-        >Deine Nachricht</label
+        >Your Role: <select name="role[]" multiple>
+          <option value="leader">Leader</option>
+          <option value="follower">Follower</option>
+        </select></label
       >
-      <textarea
-        id="message"
-        rows="4"
-        class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-        placeholder="Lass mir eine Nachricht da! 🚀" required></textarea>
-    </div>
-    <button
-      class="inline-flex items-center justify-center bg-highlight-light px-5 py-2 font-RobotoCondensed font-bold uppercase text-primary-light outline-offset-4 transition-colors delay-75 hover:bg-secondary-light hover:text-highlight-light focus-visible:outline focus-visible:outline-highlight-light dark:bg-highlight-dark dark:text-primary-dark dark:hover:bg-secondary-dark dark:hover:text-highlight-dark dark:focus-visible:outline-highlight-dark"
-      type="submit">Absenden</button
-    >
+    </p>
+    <p>
+      <label>Message: <textarea name="message"></textarea></label>
+    </p>
+    <p>
+      <button type="submit">Send</button>
+    </p>
   </form>
 </Layout>
