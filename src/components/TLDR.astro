@@ -1,0 +1,22 @@
+---
+interface Props {
+  tldr: string[] | undefined;
+}
+
+const { tldr } = Astro.props;
+---
+
+{
+  tldr && tldr.length > 0 && (
+    <div class="rounded-md bg-secondary-light p-3 dark:bg-secondary-dark">
+      <h2 class="mt-0" id="tldr">
+        TLDR
+      </h2>
+      <ul class="list-inside p-0">
+        {tldr?.map((tldr) => {
+          return <li class="marker:text-highlight-light dark:marker:text-highlight-dark">{tldr}</li>;
+        })}
+      </ul>
+    </div>
+  )
+}

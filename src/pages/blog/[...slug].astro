@@ -1,6 +1,7 @@
 ---
 import ArticleNavigation from "../../components/ArticleNavigation.astro";
 import Breadcrumb from "../../components/Breadcrumb.astro";
+import TLDR from "../../components/TLDR.astro";
 import Layout from "../../layouts/Layout.astro";
 import { CollectionEntry, getCollection } from "astro:content";
 
@@ -21,27 +22,19 @@ const { Content, headings } = await blogPost.render();
 
 <Layout title={`${blogPost.data.title} | Tufan Calisir`}>
   <Breadcrumb />
-  <div class="text-center">
+  <div class="mb-4 text-center sm:mb-8">
     <h1
       class="mb-3 font-RobotoCondensed text-2xl font-medium uppercase md:mb-4 md:text-3xl"
     >
       {blogPost.data.title}
     </h1>
-    <p class="mx-auto mb-4 max-w-md">{blogPost.data.description}</p>
+    <p class="mx-auto max-w-md">{blogPost.data.description}</p>
   </div>
-  <ArticleNavigation headlines={headings} />
+  <ArticleNavigation headlines={headings} tldr={blogPost.data.tldr} />
   <article
     class="divider prose max-w-full dark:prose-invert prose-h2:font-RobotoCondensed prose-h3:font-RobotoCondensed"
   >
     <Content />
-    <ul>
-      {
-        blogPost.data.tldr?.map(tldr => {
-          return (
-            <li>{tldr}</li>
-          )
-        })
-      }
-    </ul>
+    <TLDR tldr={blogPost.data.tldr} />
   </article>
 </Layout>

@@ -1,13 +1,15 @@
 ---
-import type { MarkdownHeading } from 'astro'
+import type { MarkdownHeading } from "astro";
 
 interface Props {
-  headlines: MarkdownHeading[]
+  headlines: MarkdownHeading[];
+  tldr?: string[];
 }
 
-const { headlines } = Astro.props
+const { headlines, tldr } = Astro.props;
 ---
-<div class="mb-4 rounded-md bg-secondary-light p-3 dark:bg-secondary-dark">
+
+<div class="mb-4 rounded-md bg-secondary-light p-3 dark:bg-secondary-dark sm:mb-8">
   <h2
     class="mb-2 font-RobotoCondensed text-xl font-medium uppercase md:mb-3 md:text-2xl"
   >
@@ -21,13 +23,24 @@ const { headlines } = Astro.props
             <a
               class="font-RobotoCondensed uppercase underline hover:no-underline focus-visible:no-underline focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-highlight-light dark:focus-visible:outline-highlight-dark"
               href={`#${headline.slug}`}
-              class=""
             >
               {headline.slug}
             </a>
           </li>
         );
       })
+    }
+    {
+      tldr && tldr.length > 0 && (
+        <li class="mb-1">
+          <a
+            class="font-RobotoCondensed uppercase underline hover:no-underline focus-visible:no-underline focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-highlight-light dark:focus-visible:outline-highlight-dark"
+            href="#tldr"
+          >
+            TLDR
+          </a>
+        </li>
+      )
     }
   </ol>
 </div>
