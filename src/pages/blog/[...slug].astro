@@ -1,4 +1,5 @@
 ---
+import ArticleNavigation from "../../components/ArticleNavigation.astro";
 import Breadcrumb from "../../components/Breadcrumb.astro";
 import Layout from "../../layouts/Layout.astro";
 import { CollectionEntry, getCollection } from "astro:content";
@@ -20,20 +21,27 @@ const { Content, headings } = await blogPost.render();
 
 <Layout title={`${blogPost.data.title} | Tufan Calisir`}>
   <Breadcrumb />
-  <h1>{blogPost.data.title}</h1>
-  <ul>
-    {headings.map(heading => {
-      return (
-        <li>{heading.slug}</li>
-      )
-    })}
-  </ul>
+  <div class="text-center">
+    <h1
+      class="mb-3 font-RobotoCondensed text-2xl font-medium uppercase md:mb-4 md:text-3xl"
+    >
+      {blogPost.data.title}
+    </h1>
+    <p class="mx-auto mb-4 max-w-md">{blogPost.data.description}</p>
+  </div>
+  <ArticleNavigation headlines={headings} />
   <article
     class="divider prose max-w-full dark:prose-invert prose-h2:font-RobotoCondensed prose-h3:font-RobotoCondensed"
   >
-    <section>
-      <p>{blogPost.data.description}</p>
-    </section>
     <Content />
+    <ul>
+      {
+        blogPost.data.tldr?.map(tldr => {
+          return (
+            <li>{tldr}</li>
+          )
+        })
+      }
+    </ul>
   </article>
 </Layout>

@@ -4,10 +4,10 @@ import FooterLink from "./FooterLink.astro";
 ---
 
 <footer class="pb-[88px] sm:flex sm:justify-between sm:pb-4">
-  <ul class="mb-2 flex justify-center gap-2">
+  <ul class="mb-2 flex justify-center gap-2 sm:gap-4">
     <li><FooterLink href="/">Home</FooterLink></li>
     <li><FooterLink href="/blog">Blog</FooterLink></li>
     <li><FooterLink href="/contact">Kontakt</FooterLink></li>
   </ul>
-  <SocialList classNames={["flex", "justify-center", "gap-2"]} />
+  <SocialList classNames={["flex", "justify-center", "gap-2", "sm:gap-4"]} />
 </footer>
