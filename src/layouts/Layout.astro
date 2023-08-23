@@ -26,6 +26,8 @@ const { title } = Astro.props;
 			<slot />
 			<Footer />
 		</main>
-		<script defer type="module" src="../../src/js/index.ts"></script>
+		<script>
+			import '../js/index';
+		</script>
 	</body>
 </html>
