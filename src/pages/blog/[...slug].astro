@@ -3,6 +3,7 @@ import ArticleNavigation from "../../components/ArticleNavigation.astro";
 import Breadcrumb from "../../components/Breadcrumb.astro";
 import TLDR from "../../components/TLDR.astro";
 import Layout from "../../layouts/Layout.astro";
+import FormattedDate from "../../components/FormattedDate.astro";
 import { CollectionEntry, getCollection } from "astro:content";
 
 export async function getStaticPaths() {
@@ -24,10 +25,11 @@ const { Content, headings } = await blogPost.render();
   <Breadcrumb />
   <div class="mb-4 text-center sm:mb-8">
     <h1
-      class="mb-3 font-RobotoCondensed text-2xl font-medium uppercase md:mb-4 md:text-3xl"
+      class="font-RobotoCondensed text-2xl font-medium uppercase md:text-3xl"
     >
       {blogPost.data.title}
     </h1>
+    <FormattedDate classNames={['block', 'mb-3', 'md:mb-4']} date={blogPost.data.pubDate} />
     <p class="mx-auto max-w-md">{blogPost.data.description}</p>
   </div>
   <ArticleNavigation headlines={headings} tldr={blogPost.data.tldr} />

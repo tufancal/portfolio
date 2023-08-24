@@ -1,7 +1,42 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-  <h1>Impressum</h1>
+<Layout title="Impressum">
+  <h1
+    class="mb-3 font-RobotoCondensed text-2xl font-medium uppercase md:mb-4 md:text-3xl"
+  >
+    Impressum
+  </h1>
+  <div class="divider">
+    <h2
+      class="mb-3 font-RobotoCondensed text-xl font-medium uppercase md:mb-4 md:text-2xl"
+      id="m46"
+    >
+      Diensteanbieter
+    </h2>
+    <p>Tufan Calisir</p>
+    <p>Willi-Hill-Weg 14</p>
+    <p>22547 Hamburg</p>
+  </div>
+
+  <div class="divider">
+    <h2
+      class="mb-3 font-RobotoCondensed text-xl font-medium uppercase md:mb-4 md:text-2xl"
+      id="m56"
+    >
+      Kontaktmöglichkeiten
+    </h2>E-Mail-Adresse: <p>
+      <a href="mailto:info@tufancalisir.de">info@tufancalisir.de</a>
+    </p>
+  </div>
+  <p class="seal divider">
+    <a
+      href="https://datenschutz-generator.de/"
+      title="Rechtstext von Dr. Schwenke - für weitere Informationen bitte anklicken."
+      target="_blank"
+      rel="noopener noreferrer nofollow"
+      >Erstellt mit kostenlosem Datenschutz-Generator.de von Dr. Thomas Schwenke</a
+    >
+  </p>
 </Layout>
