@@ -1,0 +1,37 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Icon } from "astro-icon";
+---
+
+<Layout
+  title="Seite nicht gefunden | Tufan Calisir"
+  description="Oops! Es scheint, als hätten wir die gesuchte Seite nicht gefunden. Aber keine Sorge, wir haben noch viele andere spannende Inhalte in unserer Techblog-Welt. Schauen Sie sich um und entdecken Sie Neues!"
+>
+  <div class="mb-4 flex items-center gap-4 md:mb-8">
+    <Icon
+      class="h-24 w-24 text-highlight-light dark:text-highlight-dark"
+      name="ic:baseline-error"
+    />
+    <h1 class="font-RobotoCondensed text-2xl font-medium uppercase md:text-3xl">
+      Uuups!
+    </h1>
+  </div>
+  <div class="divider">
+    <ul
+      class="list-inside list-disc rounded-md bg-secondary-light p-6 text-xl marker:text-highlight-light dark:bg-secondary-dark dark:marker:text-highlight-dark"
+    >
+      <li class="mb-2">
+        Die Seite wurde nicht gefunden, bitte überprüfe deine Eingabe.
+      </li>
+      <li class="mb-2">
+        Sollte der Link defekt sein, <a class="underline" href="/contact"
+          >lass es mich wissen!</a
+        >
+      </li>
+      <li class="mb-2">
+        Ansonsten probiere es nochmal über die <a class="underline" href="/"
+          >Startseite!</a>
+      </li>
+    </ul>
+  </div>
+</Layout>
