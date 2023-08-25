@@ -21,7 +21,7 @@ const blogPost = Astro.props;
 const { Content, headings } = await blogPost.render();
 ---
 
-<Layout title={`${blogPost.data.title} | Tufan Calisir`}>
+<Layout title={`${blogPost.data.title} | Tufan Calisir`} description={`Erkunden Sie unseren neuesten Blogartikel: '${blogPost.data.title}'. Tauchen Sie ein in fesselnde Inhalte zu diesem Thema und erweitern Sie Ihr Wissen in der faszinierenden Welt der Technologie.`}>
   <Breadcrumb />
   <div class="mb-4 text-center sm:mb-8">
     <h1

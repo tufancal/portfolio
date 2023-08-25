@@ -28,7 +28,7 @@ const { tag } = Astro.params;
 const { filteredPosts } = Astro.props;
 ---
 
-<Layout title={`Blogartikel mit dem Tag: ${tag} | Tufan Calisir`}>
+<Layout title={`Blogartikel mit dem Tag: ${tag} | Tufan Calisir`} description={`Entdecken Sie unsere handverlesene Auswahl von Blogartikeln zum Tag '${tag}'. Tauchen Sie ein in informative Beiträge zu diesem Thema und erweitern Sie Ihr Wissen in der faszinierenden Welt der Technologie.`}>
   <Breadcrumb />
   <h1 class="mb-6 font-RobotoCondensed text-2xl font-bold uppercase">
     Blogartikel mit dem Tag: {tag}
