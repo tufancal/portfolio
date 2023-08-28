@@ -1,0 +1,32 @@
+---
+import FormattedDate from "./FormattedDate.astro";
+import Button from "./Button.astro";
+import { Icon } from "astro-icon";
+
+interface Props {
+  title: string;
+  description: string;
+  date: Date;
+  slug: string;
+  readtime: string;
+}
+
+const { title, description, date, slug, readtime } = Astro.props;
+---
+
+<article class="rounded-md bg-secondary-light p-6 dark:bg-secondary-dark">
+  <h2
+    class="font-RobotoCondensed text-xl font-bold text-highlight-light dark:text-highlight-dark"
+  >
+    {title}
+  </h2>
+  <div class="mb-2 flex items-center justify-between text-sm md:mb-4">
+    <FormattedDate date={date} />
+    <p class="flex items-center gap-2">
+      <Icon name="mdi:clock" class="w-5" />
+      {readtime}
+    </p>
+  </div>
+  <p class="mb-2 line-clamp-3 md:mb-4">{description}</p>
+  <Button href={`/blog/${slug}/`} target={true}>Weiterlesen</Button>
+</article>
