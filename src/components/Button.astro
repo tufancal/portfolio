@@ -2,14 +2,16 @@
 interface Props {
   href: string;
   target?: boolean;
-  style?: 'primary' | 'secondary'
+  style?: "primary" | "secondary";
 }
 
-const { href, target, style = 'primary' } = Astro.props;
+const { href, target, style = "primary" } = Astro.props;
 ---
 
 <a
-  class={`${style === 'primary' ? 'btn-primary' : 'btn-secondary'}`}
+  class={`inline-flex items-center justify-center px-5 py-2 font-RobotoCondensed font-bold uppercase outline-offset-4 transition-colors delay-75 ${
+    style === "primary" ? "btn-primary" : "btn-secondary"
+  }`}
   href={href}
   target={target ? "_blank" : undefined}
   rel={target ? "noreferrer noopener" : undefined}

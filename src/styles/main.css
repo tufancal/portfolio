@@ -52,10 +52,10 @@
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center bg-highlight-light px-5 py-2 font-RobotoCondensed font-bold uppercase text-primary-light outline-offset-4 transition-colors delay-75 hover:bg-secondary-light hover:text-highlight-light focus-visible:outline focus-visible:outline-highlight-light dark:bg-highlight-dark dark:text-primary-dark dark:hover:bg-secondary-dark dark:hover:text-highlight-dark dark:focus-visible:outline-highlight-dark;
+    @apply bg-highlight-light text-primary-light hover:bg-secondary-light hover:text-highlight-light focus-visible:outline focus-visible:outline-highlight-light dark:bg-highlight-dark dark:text-primary-dark dark:hover:bg-secondary-dark dark:hover:text-highlight-dark dark:focus-visible:outline-highlight-dark;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center bg-primary-light px-5 py-2 font-RobotoCondensed font-bold uppercase text-highlight-light outline-offset-4 transition-colors delay-75 hover:bg-highlight-light hover:text-primary-light focus-visible:outline focus-visible:outline-primary-light dark:bg-primary-dark dark:text-highlight-dark dark:hover:bg-highlight-dark dark:hover:text-primary-dark dark:focus-visible:outline-primary-dark;
+    @apply bg-primary-light text-highlight-light  hover:bg-highlight-light hover:text-primary-light focus-visible:outline focus-visible:outline-primary-light dark:bg-primary-dark dark:text-highlight-dark dark:hover:bg-highlight-dark dark:hover:text-primary-dark dark:focus-visible:outline-primary-dark;
   }
 }
