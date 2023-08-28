@@ -1,4 +1,5 @@
 ---
+featured: true
 title: "Quereinstieg: Frontend-Entwickler"
 description: Mein Weg zum Frontend-Entwickler war nicht so strukturiert und
   zielgerichtet wie bei anderen. Ich hatte das Glück, schon relativ früh mit

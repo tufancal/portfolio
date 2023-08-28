@@ -4,7 +4,7 @@ import Button from "../components/Button.astro";
 import { Icon } from "astro-icon";
 import { getCollection } from "astro:content";
 import BlogTeaserCard from "../components/BlogTeaserCard.astro";
-import { late } from "astro/zod";
+import BlogTeaserCardHighlight from "../components/BlogTeaserCardHiglight.astro";
 
 const skills = [
   "html5",
@@ -27,6 +27,9 @@ const sortedPosts = blogPosts
   .reverse();
 
 const lastestPost = sortedPosts[0];
+const featuredPost = blogPosts.filter(
+  (blogPost) => blogPost.data.featured === true,
+)[0];
 ---
 
 <Layout title="Startseite | Tufan Calisir">
@@ -49,8 +52,26 @@ const lastestPost = sortedPosts[0];
       <Button href="/contact" target={false}>Kontakt</Button>
     </div>
   </section>
+  {
+    featuredPost && (
+      <section class="divider">
+        <h2 class="mb-3 font-RobotoCondensed text-xl font-medium uppercase text-highlight-light dark:text-highlight-dark md:mb-4 md:text-2xl">
+          Blogartikel im Spotlight
+        </h2>
+        <BlogTeaserCardHighlight
+          title={featuredPost.data.title}
+          description={featuredPost.data.description}
+          date={featuredPost.data.pubDate}
+          slug={featuredPost.slug}
+          readtime={featuredPost.data.readtime}
+        />
+      </section>
+    )
+  }
   <section class="divider">
-    <h2 class="mb-3 font-RobotoCondensed text-xl font-medium uppercase md:mb-4 md:text-2xl">
+    <h2
+      class="mb-3 font-RobotoCondensed text-xl font-medium uppercase md:mb-4 md:text-2xl"
+    >
       Technologien
     </h2>
     <ul class="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-4">
@@ -67,7 +88,9 @@ const lastestPost = sortedPosts[0];
     </ul>
   </section>
   <section class="divider">
-    <h2 class="mb-3 font-RobotoCondensed text-xl font-medium uppercase md:mb-4 md:text-2xl">
+    <h2
+      class="mb-3 font-RobotoCondensed text-xl font-medium uppercase md:mb-4 md:text-2xl"
+    >
       Letzter Blogartikel
     </h2>
     <BlogTeaserCard
