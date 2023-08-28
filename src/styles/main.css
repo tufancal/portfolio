@@ -3,51 +3,59 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Roboto';
-  src: url('/fonts/Roboto-Regular.ttf') format('truetype');
-  src: url('/fonts/Roboto-Regular.woff2') format('woff2');
+  font-family: "Roboto";
+  src: url("/fonts/Roboto-Regular.ttf") format("truetype");
+  src: url("/fonts/Roboto-Regular.woff2") format("woff2");
   font-weight: 400;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Roboto';
-  src: url('/fonts/Roboto-Medium.ttf') format('truetype');
-  src: url('/fonts/Roboto-Medium.woff2') format('woff2');
+  font-family: "Roboto";
+  src: url("/fonts/Roboto-Medium.ttf") format("truetype");
+  src: url("/fonts/Roboto-Medium.woff2") format("woff2");
   font-weight: 500;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Roboto';
-  src: url('/fonts/Roboto-Bold.ttf') format('truetype');
-  src: url('/fonts/Roboto-Bold.woff2') format('woff2');
+  font-family: "Roboto";
+  src: url("/fonts/Roboto-Bold.ttf") format("truetype");
+  src: url("/fonts/Roboto-Bold.woff2") format("woff2");
   font-weight: 700;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'RobotoCondensed';
-  src: url('/fonts/RobotoCondensed-Regular.ttf') format('truetype');
-  src: url('/fonts/RobotoCondensed-Regular.woff2') format('woff2');
+  font-family: "RobotoCondensed";
+  src: url("/fonts/RobotoCondensed-Regular.ttf") format("truetype");
+  src: url("/fonts/RobotoCondensed-Regular.woff2") format("woff2");
   font-weight: 400;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'RobotoCondensed';
-  src: url('/fonts/RobotoCondensed-Bold.ttf') format('truetype');
-  src: url('/fonts/RobotoCondensed-Bold.woff2') format('woff2');
+  font-family: "RobotoCondensed";
+  src: url("/fonts/RobotoCondensed-Bold.ttf") format("truetype");
+  src: url("/fonts/RobotoCondensed-Bold.woff2") format("woff2");
   font-weight: 700;
   font-display: swap;
 }
 
 @layer components {
   .divider {
-    @apply mb-4 border-b border-secondary-light pb-4 md:mb-8 md:pb-8 last:border-none last:mb-0 last:pb-0
+    @apply mb-4 border-b border-secondary-light pb-4 last:mb-0 last:border-none last:pb-0 md:mb-8 md:pb-8;
   }
 
   .sociallink {
-    @apply inline-block transition-transform delay-75 hover:-translate-y-1 focus-visible:outline outline-offset-4 outline-highlight-light dark:outline-highlight-dark
+    @apply inline-block outline-offset-4 outline-highlight-light transition-transform delay-75 hover:-translate-y-1 focus-visible:outline dark:outline-highlight-dark;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center bg-highlight-light px-5 py-2 font-RobotoCondensed font-bold uppercase text-primary-light outline-offset-4 transition-colors delay-75 hover:bg-secondary-light hover:text-highlight-light focus-visible:outline focus-visible:outline-highlight-light dark:bg-highlight-dark dark:text-primary-dark dark:hover:bg-secondary-dark dark:hover:text-highlight-dark dark:focus-visible:outline-highlight-dark;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center bg-primary-light px-5 py-2 font-RobotoCondensed font-bold uppercase text-highlight-light outline-offset-4 transition-colors delay-75 hover:bg-highlight-light hover:text-primary-light focus-visible:outline focus-visible:outline-primary-light dark:bg-primary-dark dark:text-highlight-dark dark:hover:bg-highlight-dark dark:hover:text-primary-dark dark:focus-visible:outline-primary-dark;
   }
 }
