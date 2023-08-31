@@ -18,6 +18,7 @@ export default defineConfig({
           branch: "main",
         },
         media_folder: "src/assets/images",
+        public_folder: "/",
         collections: [
           {
             name: "posts",
