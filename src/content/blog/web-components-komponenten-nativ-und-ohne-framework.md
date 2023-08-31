@@ -108,7 +108,7 @@ Im HTML sieht es dann folgendermaßen aus:
 
 und der Output wäre dann so:
 
-![Beispiel für eine Web Component](/src/assets/images/example_webcomponent.webp "Card Modul")
+![Beispiel für eine Web Component](/example_webcomponent.webp "Card Modul")
 
 ## Shadow DOM
 
@@ -116,7 +116,7 @@ Kapselung. Ein wichtiger Aspekt von Web Components. Mit Hilfe von Kapselung kann
 
 *DOM: Document Object Model*
 
-![Beispiel für Shadow DOM](/src/assets/images/shadowdom.svg "Shadow DOM Tree")
+![Beispiel für Shadow DOM](/shadowdom.svg "Shadow DOM Tree")
 
 *Quelle: [Link](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_shadow_DOM/shadowdom.svg)*
 
@@ -227,7 +227,7 @@ Hier wird der Inhalt des Templates dem Element als Child hinzugefügt. Mit clone
 </html>
 ```
 
-![Beispiel für die Nutzung von Slots](/src/assets/images/example_slots.webp "Slot Example")
+![Beispiel für die Nutzung von Slots](/example_slots.webp "Slot Example")
 
 ## Callback Funktionen
 
