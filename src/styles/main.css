@@ -48,7 +48,7 @@
   }
 
   .sociallink {
-    @apply inline-block outline-offset-4 outline-highlight-light transition-transform delay-75 hover:-translate-y-1 focus-visible:outline dark:outline-highlight-dark;
+    @apply inline-flex items-center gap-2 outline-offset-4 outline-highlight-light transition-transform delay-75 hover:-translate-y-1 focus-visible:outline dark:outline-highlight-dark;
   }
 
   .btn-primary {

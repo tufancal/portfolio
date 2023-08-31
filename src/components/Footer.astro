@@ -4,12 +4,35 @@ import FooterLink from "./FooterLink.astro";
 ---
 
 <footer class="pb-[88px] sm:flex sm:justify-between sm:pb-4">
-  <ul class="mb-3 flex flex-wrap justify-center gap-4">
-    <li><FooterLink href="/">Home</FooterLink></li>
-    <li><FooterLink href="/blog">Blog</FooterLink></li>
-    <li><FooterLink href="/contact">Kontakt</FooterLink></li>
-    <li><FooterLink href="/imprint">Impressum</FooterLink></li>
-    <li><FooterLink href="/privacy-policy">Datenschutz</FooterLink></li>
-  </ul>
-  <SocialList classNames={["flex", "justify-center", "gap-4"]} />
+  <div>
+    <h2
+      class="mb-3 font-RobotoCondensed text-xl font-medium uppercase md:mb-4 md:text-2xl"
+    >
+      Navigation
+    </h2>
+    <ul class="mb-5 flex flex-wrap gap-4 sm:flex-col sm:mb-0">
+      <li><FooterLink href="/">Home</FooterLink></li>
+      <li><FooterLink href="/blog">Blog</FooterLink></li>
+      <li><FooterLink href="/contact">Kontakt</FooterLink></li>
+    </ul>
+  </div>
+  <div>
+    <h2
+      class="mb-3 font-RobotoCondensed text-xl font-medium uppercase md:mb-4 md:text-2xl"
+    >
+      Rechtliches
+    </h2>
+    <ul class="mb-5 flex flex-wrap gap-4 sm:flex-col sm:mb-0">
+      <li><FooterLink href="/imprint">Impressum</FooterLink></li>
+      <li><FooterLink href="/privacy-policy">Datenschutz</FooterLink></li>
+    </ul>
+  </div>
+  <div>
+    <h2
+      class="mb-3 font-RobotoCondensed text-xl font-medium uppercase md:mb-4 md:text-2xl"
+    >
+      Soziale Medien
+    </h2>
+    <SocialList classNames={["flex", "gap-4", "sm:flex-col"]} />
+  </div>
 </footer>
