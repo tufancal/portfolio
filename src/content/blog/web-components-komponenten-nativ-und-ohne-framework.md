@@ -4,8 +4,8 @@ title: Web Components - Komponenten nativ und ohne Framework
 description: Web Components bieten die Möglichkeit, benutzerdefinierte und
   wiederverwendbare Komponenten mit jeweils unabhängigen und gekapselten
   Funktionen zu erstellen.
-pubDate: 2023-08-28T16:48:50.842Z
-readtime: 11 mins
+pubDate: 2023-08-31T12:56:21.425Z
+readtime: 6 mins
 tags:
   - development
 tldr:
@@ -118,7 +118,7 @@ Kapselung. Ein wichtiger Aspekt von Web Components. Mit Hilfe von Kapselung kann
 
 ![Beispiel für Shadow DOM](/shadowdom.svg "Shadow DOM Tree")
 
-*Quelle: https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_shadow_DOM/shadowdom.svg*
+*Quelle: [Link](*https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_shadow_DOM/shadowdom.svg*)*
 
 * Shadow Host: Natürliche DOM Node die den Shadow DOM enthält
 * Shadow Tree: DOM Tree innerhalb des Shadow DOMs
@@ -136,7 +136,7 @@ Der Unterschied zwischen den Modi besteht darin, dass bei "open" von außen auf 
 
 ## Template und Slot
 
-Im <template>-Tag können sich wiederholende Markups erstellt und an verschiedenen Stellen verwendet werden. Der Inhalt ist nicht im DOM enthalten, kann aber mit Hilfe von JavaScript angezeigt werden.
+Im template-Tag können sich wiederholende Markups erstellt und an verschiedenen Stellen verwendet werden. Der Inhalt ist nicht im DOM enthalten, kann aber mit Hilfe von JavaScript angezeigt werden.
 
 Das obige Beispiel könnte wie folgt angepasst werden:
 
@@ -204,10 +204,9 @@ class CustomCard extends HTMLElement {
 }
 
 customElements.define('custom-card', CustomCard);
-
 ```
 
-Hier wird der Inhalt des Templates dem Element als Child hinzugefügt. Mit cloneNode(true) erstellt man eine exakte Kopie und referenziert nicht nur den Template-Inhalt, um ihn wiederverwenden zu können. Im Code-Beispiel sieht man auch, dass <slot>-Tags hinzugefügt wurden. Dies ermöglicht eine gewisse Flexibilität innerhalb der Komponente. Es spielt keine Rolle, in welcher Reihenfolge die Slots im HTML stehen und man kann sogar Komponenten in Komponenten rendern.
+Hier wird der Inhalt des Templates dem Element als Child hinzugefügt. Mit cloneNode(true) erstellt man eine exakte Kopie und referenziert nicht nur den Template-Inhalt, um ihn wiederverwenden zu können. Im Code-Beispiel sieht man auch, dass slot-Tags hinzugefügt wurden. Dies ermöglicht eine gewisse Flexibilität innerhalb der Komponente. Es spielt keine Rolle, in welcher Reihenfolge die Slots im HTML stehen und man kann sogar Komponenten in Komponenten rendern.
 
 ```html
 <!DOCTYPE html>

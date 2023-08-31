@@ -7,9 +7,7 @@ description: Mein Weg zum Frontend-Entwickler war nicht so strukturiert und
 pubDate: 2023-08-24T08:11:05.182Z
 readtime: 5 mins
 tags:
-  - development
-  - personal
-  - growth
+  - career
 tldr:
   - früh mit Computern gearbeitet / gezockt
   - Studium an der TUHH / Informatik-Ingenieurwesen
@@ -25,11 +23,11 @@ Schon als kleines Kind durfte ich mir mit meinen älteren Brüdern einen Compute
 
 ## Nach dem Abitur
 
-Nach dem Abitur stand für mich fest, dass ich etwas mit Computern machen möchte. Ich habe mich damals an der Hochschule für angewandte Wissenschaften für den Studiengang "Angewandte Informatik" und an der Technischen Universität Hamburg-Harbug für den Studiengang "Informatik-Ingenieurwesen" beworben. Da mir auch Mathematik sehr viel Spaß macht und ich gerne komplizierte Gleichungen löse, war das ein Grund, mich für die TUHH zu entscheiden. Außerdem wollte ich meinen Eltern eine Freude machen, indem ich an einer Universität studiere, die auch ein gewisses Prestige hat. Schließlich habe ich es meinen Eltern zu verdanken, dass ich diese Leidenschaft für Computer und Technik entwickeln konnte.
+Nach dem Abitur stand für mich fest, dass ich etwas mit Computern machen möchte. Ich habe mich damals an der Hochschule für angewandte Wissenschaften für den Studiengang "Angewandte Informatik" und an der Technischen Universität Hamburg-Harburg für den Studiengang "Informatik-Ingenieurwesen" beworben. Da mir auch Mathematik sehr viel Spaß macht und ich gerne komplizierte Gleichungen löse, war das ein Grund, mich für die TUHH zu entscheiden. Außerdem wollte ich meinen Eltern eine Freude machen, indem ich an einer Universität studiere, die auch ein gewisses Prestige hat. Schließlich habe ich es meinen Eltern zu verdanken, dass ich diese Leidenschaft für Computer und Technik entwickeln konnte.
 
 ## Informatik-Ingenieurwesen
 
-Das Studium an der Technischen Universität Hamburg-Harburg hat mir jegliche Motivation und jegliches Interesse an der Informatik genommen. Viele meiner damaligen Kommilitonen waren Bilderbuchinformatiker. Ich dachte immer, die Darstellung in Filmen und Serien sei übertrieben, aber in der Kennenlernrunde des Studiengangs wurde mir schnell klar, dass es wirklich so ist. Nerds eben. Jung und erfahren wie ich war, dachte ich, dass ich in diesem Studiengang das Programmieren lernen würde. Leider war dies eher mehr als weniger vorausgesetzt und dementsprechend waren auch die Vorlesungen sehr hart und schnell im Programm. Ich habe schnell gemerkt, dass ich überfordert war und der Umgang mit den Kommilitonen untereinander hat mich dazu gebracht, das Studium abzubrechen. Da ich mich immer noch für naturwissenschaftliche Themen interessierte, entschied ich mich für den Studiengang Fahrzeugbau an der Hochschule für angewandte Wissenschaften.
+Das Studium an der Technischen Universität Hamburg-Harburg hat mir jegliche Motivation und jegliches Interesse an der Informatik genommen. Viele meiner damaligen Kommilitonen waren Bilderbuchinformatiker. Ich dachte immer, die Darstellung in Filmen und Serien sei übertrieben, aber in der Kennenlernrunde des Studiengangs wurde mir schnell klar, dass es wirklich so ist. Nerds eben. Jung und unerfahren wie ich war, dachte ich, dass ich in diesem Studiengang das Programmieren lernen würde. Leider war dies eher mehr als weniger vorausgesetzt und dementsprechend waren auch die Vorlesungen sehr hart und schnell im Programm. Ich habe schnell gemerkt, dass ich überfordert war und der Umgang mit den Kommilitonen untereinander hat mich dazu gebracht, das Studium abzubrechen. Da ich mich immer noch für naturwissenschaftliche Themen interessierte, entschied ich mich für den Studiengang Fahrzeugbau an der Hochschule für angewandte Wissenschaften.
 
 ## Fahrzeugbau
 

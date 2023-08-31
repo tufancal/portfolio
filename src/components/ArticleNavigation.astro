@@ -18,7 +18,7 @@ const { headlines, tldr } = Astro.props;
       <ol class="list-inside list-decimal">
         {headlines.map((headline) => {
           return (
-            <li class="mb-1">
+            <li class="mb-1 py-2">
               <a
                 class="font-RobotoCondensed uppercase underline hover:no-underline focus-visible:no-underline focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-highlight-light dark:focus-visible:outline-highlight-dark"
                 href={`#${headline.slug}`}
