@@ -29,7 +29,8 @@ export default defineConfig({
               {
                 name: "featured",
                 widget: "boolean",
-                label: "Featured Post"
+                label: "Featured Post",
+                required: false
               },
               {
                 name: "title",
