@@ -10,7 +10,7 @@ import FooterLink from "./FooterLink.astro";
     >
       Navigation
     </h2>
-    <ul class="mb-5 flex flex-wrap gap-4 sm:flex-col sm:mb-0">
+    <ul class="mb-5 flex flex-col gap-4 sm:mb-0">
       <li><FooterLink href="/">Home</FooterLink></li>
       <li><FooterLink href="/blog">Blog</FooterLink></li>
       <li><FooterLink href="/contact">Kontakt</FooterLink></li>
@@ -22,7 +22,7 @@ import FooterLink from "./FooterLink.astro";
     >
       Rechtliches
     </h2>
-    <ul class="mb-5 flex flex-wrap gap-4 sm:flex-col sm:mb-0">
+    <ul class="mb-5 flex flex-col gap-4 sm:mb-0">
       <li><FooterLink href="/imprint">Impressum</FooterLink></li>
       <li><FooterLink href="/privacy-policy">Datenschutz</FooterLink></li>
     </ul>
@@ -33,6 +33,6 @@ import FooterLink from "./FooterLink.astro";
     >
       Soziale Medien
     </h2>
-    <SocialList classNames={["flex", "gap-4", "sm:flex-col"]} />
+    <SocialList classNames={["flex", "gap-4", "flex-col"]} />
   </div>
 </footer>
