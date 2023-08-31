@@ -4,7 +4,7 @@ title: Web Components - Komponenten nativ und ohne Framework
 description: Web Components bieten die Möglichkeit, benutzerdefinierte und
   wiederverwendbare Komponenten mit jeweils unabhängigen und gekapselten
   Funktionen zu erstellen.
-pubDate: 2023-08-31T12:56:21.425Z
+pubDate: 2023-08-31T14:17:29.883Z
 readtime: 6 mins
 tags:
   - development
@@ -108,7 +108,7 @@ Im HTML sieht es dann folgendermaßen aus:
 
 und der Output wäre dann so:
 
-![Beispiel für eine Web Component](/example_webcomponent.webp "Card Modul")
+![Beispiel für eine Web Component](/src/assets/images/example_webcomponent.webp "Card Modul")
 
 ## Shadow DOM
 
@@ -116,9 +116,9 @@ Kapselung. Ein wichtiger Aspekt von Web Components. Mit Hilfe von Kapselung kann
 
 *DOM: Document Object Model*
 
-![Beispiel für Shadow DOM](/shadowdom.svg "Shadow DOM Tree")
+![Beispiel für Shadow DOM](/src/assets/images/shadowdom.svg "Shadow DOM Tree")
 
-*Quelle: [Link](*https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_shadow_DOM/shadowdom.svg*)*
+*Quelle: [Link](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_shadow_DOM/shadowdom.svg)*
 
 * Shadow Host: Natürliche DOM Node die den Shadow DOM enthält
 * Shadow Tree: DOM Tree innerhalb des Shadow DOMs
@@ -227,7 +227,7 @@ Hier wird der Inhalt des Templates dem Element als Child hinzugefügt. Mit clone
 </html>
 ```
 
-![Beispiel für die Nutzung von Slots](/example_slots.webp "Slot Example")
+![Beispiel für die Nutzung von Slots](/src/assets/images/example_slots.webp "Slot Example")
 
 ## Callback Funktionen
 
