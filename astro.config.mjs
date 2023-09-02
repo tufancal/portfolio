@@ -1,8 +1,8 @@
+import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 import NetlifyCMS from "astro-netlify-cms";
 import { defineConfig } from "astro/config";
-
 
 // https://astro.build/config
 export default defineConfig({
@@ -26,13 +26,15 @@ export default defineConfig({
             folder: "src/content/blog",
             create: true,
             delete: true,
+            extension: "mdx",
+            format: "frontmatter",
             slug: "{{slug}}",
             fields: [
               {
                 name: "featured",
                 widget: "boolean",
                 label: "Featured Post",
-                required: false
+                required: false,
               },
               {
                 name: "title",
@@ -80,5 +82,6 @@ export default defineConfig({
       },
     }),
     sitemap(),
+    mdx(),
   ],
 });
