@@ -17,6 +17,12 @@ tldr:
     disconnectedCallback(), attributeChangedCallback() ermöglichen eine einfache
     Interaktivität"
 ---
+import { Image } from 'astro:assets';
+import image_0 from '../../assets/images/example_webcomponent.webp';
+import image_1 from '../../assets/images/shadowdom.svg';
+import image_2 from '../../assets/images/example_slots.webp';
+
+
 ## Was sind "Web Components"?
 
 Als Entwickler kennen wir das Problem, skalierbare Anwendungen zu erstellen. Um die Übersicht zu behalten, ist es hilfreich, gekapselte Komponenten zu erstellen, die im Code häufig wiederverwendet werden. Diese Ansätze verfolgt man mit Frontend Frameworks wie React. Man kann dies aber auch mit nativem JavaScript erreichen und "Web Components" schreiben.
@@ -108,7 +114,7 @@ Im HTML sieht es dann folgendermaßen aus:
 
 und der Output wäre dann so:
 
-![Beispiel für eine Web Component](/example_webcomponent.webp "Card Modul")
+<Image src={image_0} alt="Beispiel für eine Web Component" title="Beispiel für eine Web Component" />
 
 ## Shadow DOM
 
@@ -116,7 +122,7 @@ Kapselung. Ein wichtiger Aspekt von Web Components. Mit Hilfe von Kapselung kann
 
 *DOM: Document Object Model*
 
-![Beispiel für Shadow DOM](/shadowdom.svg "Shadow DOM Tree")
+<Image src={image_1} alt="Beispiel für Shadow DOM" title="Beispiel für Shadow DOM" />
 
 *Quelle: [Link](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_shadow_DOM/shadowdom.svg)*
 
@@ -227,7 +233,7 @@ Hier wird der Inhalt des Templates dem Element als Child hinzugefügt. Mit clone
 </html>
 ```
 
-![Beispiel für die Nutzung von Slots](/example_slots.webp "Slot Example")
+<Image src={image_2} alt="Beispiel für die Nutzung von Slots" title="Beispiel für die Nutzung von Slots" />
 
 ## Callback Funktionen
 
