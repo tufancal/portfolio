@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "prebuild": "node ./src/js/scripts/optimizeImages.cjs",
+    "build": "npm run prebuild astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
