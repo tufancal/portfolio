@@ -1,6 +1,7 @@
 # Portfolio / Blog project powered by Astro w/ TailwindCSS
 
 This is my own blog / portfolio powered by Astro and TailwindCSS.
+Link to my [blog / portfolio page](https://tufancalisir.de/).
 
 ## Version History
 
